@@ -70,6 +70,7 @@ h1 {
   display: flex;
   gap: 10px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -80,6 +81,7 @@ h1 {
   font-size: 14px;
   font-weight: 500;
   transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .btn:hover {
@@ -114,6 +116,7 @@ h1 {
 table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 500px;
 }
 
 thead {
@@ -182,6 +185,7 @@ tbody tr:hover {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 20px;
 }
 
 .dialog {
@@ -189,7 +193,7 @@ tbody tr:hover {
   border-radius: 8px;
   padding: 24px;
   max-width: 400px;
-  width: 90%;
+  width: 100%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
@@ -208,6 +212,7 @@ tbody tr:hover {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 /* Toolbar */
@@ -220,12 +225,25 @@ tbody tr:hover {
   gap: 10px;
 }
 
+.toolbar h3 {
+  flex: 1;
+  min-width: 150px;
+}
+
+.toolbar-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .search-box {
   padding: 8px 12px;
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 14px;
-  width: 200px;
+  width: 150px;
+  min-width: 120px;
 }
 
 /* Empty State */
@@ -244,6 +262,74 @@ tbody tr:hover {
   border-left: 4px solid #27ae60;
 }
 
-.success-dialog .dialog {
-  border-left: 4px solid #27ae60;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar h3 {
+    text-align: center;
+  }
+
+  .toolbar-controls {
+    justify-content: center;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+
+  .dialog-actions {
+    flex-direction: column;
+  }
+
+  .dialog-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 18px;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  .action-btns {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .btn-sm {
+    width: 100%;
+  }
 }

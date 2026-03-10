@@ -174,7 +174,7 @@ function App() {
       <div className="card">
         <div className="toolbar">
           <h3>Student List</h3>
-          <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+          <div className="toolbar-controls">
             <input
               type="text"
               className="search-box"
